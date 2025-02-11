@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "595933856372",
+    "firebase_url": "https://techrace-2k25-308ee-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "techrace-2k25-308ee",
+    "storage_bucket": "techrace-2k25-308ee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595933856372:android:f126a762f1f07d196c4721",
+        "android_client_info": {
+          "package_name": "com.oculus.techrace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuzudkhEUKIaLYK5nzeeCIoluPQqwipo8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595933856372:android:33965d02c598d0896c4721",
+        "android_client_info": {
+          "package_name": "com.oculus.techracev.techracev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuzudkhEUKIaLYK5nzeeCIoluPQqwipo8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
