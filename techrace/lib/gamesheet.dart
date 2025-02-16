@@ -23,7 +23,7 @@ class _GameSheetState extends State<GameSheet> {
   late int finalClueNo;
   // late DatabaseReference dbRef;
   // late Stream<DatabaseEvent> teamStream;
-  // ValueNotifier<int> clueNo = ValueNotifier(0);
+  // ValueNotifier<int> clueNo = ValueNotifier(0);x
   // ValueNotifier<int> points = ValueNotifier(-1);
   // ValueNotifier<dynamic> clueData = ValueNotifier(HashMap.from({}));
 

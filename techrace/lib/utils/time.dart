@@ -11,9 +11,9 @@ class TimeStream {
   final HomeController homeController = Get.find<HomeController>();
   String teamId = MLocalStorage().getTeamID();
   TimeStream() {
-    // ref = FirebaseDatabase.instance.ref("/start_datetime");
+    ref = FirebaseDatabase.instance.ref("/start_datetime");
 
-    // ref = FirebaseDatabase.instance.ref("/dummy_teams/$teamId/prev_clue_solved_timestamp");
+    ref = FirebaseDatabase.instance.ref("/dummy_teams/$teamId/prev_clue_solved_timestamp");
     // stream = ref.onValue;
     // sub1 = stream.listen((DatabaseEvent event) {
     //   // print(event.snapshot.value);
@@ -96,7 +96,7 @@ class TimeStream {
 
       time = DateTime.parse(timeRef.snapshot.value as String);
       homeController.prevClueSolvedTimeStamp.value = timeRef.snapshot.value as String;
-      
+
       //print('time: $time');
       // ref.get().then((DataSnapshot snapshot) {
       //   print('snapshot.value: ${snapshot.value}');

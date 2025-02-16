@@ -27,6 +27,6 @@
 	<key>GOOGLE_APP_ID</key>
 	<string>1:893211332380:ios:a7458540990213f67ff4d9</string>
 	<key>DATABASE_URL</key>
-	<string>https://techracedev23-default-rtdb.firebaseio.com</string>
+
 </dict>
 </plist>

@@ -91,6 +91,9 @@ class _LoginState extends State<Login> {
                         DatabaseReference ref = FirebaseDatabase.instance
                             .ref("/validation/$clueNo");
                         await ref.get().then((data) async {
+
+                          print("Firebase Database URL: ${FirebaseDatabase.instance.app.options.databaseURL}");
+
                           if (data.value == null) {
                             Get.closeAllSnackbars();
                             Get.snackbar(

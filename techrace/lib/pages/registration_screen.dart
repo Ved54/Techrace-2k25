@@ -282,12 +282,10 @@ class _VerificationWidgetState extends State<VerificationWidget> {
   late iB.BeaconBroadcast beaconBroadcast;
   RxBool isAdmin = false.obs;
   RxBool isBroadcasting = false.obs;
-  // String tid = MLocalStorage.tid;
   String tid = MLocalStorage().getTeamID();
 
   checkBeacon() async {
     bool isBroad = await flutterBeacon.isBroadcasting();
-    //print("broadcasting: $isBroad");
     isBroadcasting.value = isBroad;
   }
 
@@ -318,7 +316,6 @@ class _VerificationWidgetState extends State<VerificationWidget> {
   Widget build(BuildContext context) {
     return Dialog(
       backgroundColor: const Color(0xff121827),
-      // backgroundColor: Theme.of(context).primaryColorDark,
       child: Container(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -330,10 +327,6 @@ class _VerificationWidgetState extends State<VerificationWidget> {
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: "Admin Verification Code",
-                // helperText:
-                // // "What's do you think is the location (name only not address)?\nE.g. The Taj Mahal Hotel",
-                // "NOTE: Don't enter address. Only the name of the location you have guessed.\nExample1: The Taj Hotel\nExample 2: Galaxy Appartments",
-                // helperMaxLines: 10
               ),
             ),
             const SizedBox(

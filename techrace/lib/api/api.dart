@@ -80,7 +80,7 @@ class Api {
       "curr_lng": curr_lng
     });
 
-    return _netUtil.post(LOGIN_URL, {"tid": teamId, "password": password}).then((dynamic res) {
+    return _netUtil.post(LOGIN_URL, {"tid": teamId, "password": password, "curr_lat": curr_lat, "curr_lng": curr_lng}).then((dynamic res) {
       // print(res.toString());
       return res;
     });

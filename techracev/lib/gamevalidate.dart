@@ -13,7 +13,7 @@ import 'package:techracev/main.dart';
 //import 'package:techracev/utils/datetime.dart';
 
 import 'utils/timestream.dart';
-// import 'package:qrscan/qrscan.dart' as scanner;
+import 'package:qrscan/qrscan.dart' as scanner;
 
 //ValueNotifier<List<Beacon>> beaconsFound = ValueNotifier<List<Beacon>>([]);
 // List<Region> regions = <Region>[Region(identifier: 'techRace')];
@@ -255,32 +255,38 @@ class _ValidateState extends State<Validate>
               teamCodesCompleted: teamCodesCompleted),
           //scan
           TextButton(onPressed: () async {
+
+
+
             isCamScan.value = !isCamScan.value;
-            // String? qrRes = await scanner.scan();
-            // // debugPrint("TeamCode: $qrRes");
-            // String updateCheck = await updateDB(ref, qrRes as String)
-            //     .timeout(const Duration(seconds: 5), onTimeout: () {
-            //   return 'Timeout';
-            // });
-            // if (!mounted) return;
-            // ScaffoldMessenger.of(context).showSnackBar(
-            //   SnackBar(
-            //     backgroundColor: Colors.blueGrey.withOpacity(0.2),
-            //     content: Text(updateCheck,
-            //         style: const TextStyle(
-            //           color: Colors.white,
-            //         )),
-            //     margin: const EdgeInsets.all(10),
-            //     behavior: SnackBarBehavior.floating,
-            //     //padding: const EdgeInsets.all(8),
-            //     shape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.circular(10),
-            //     ),
-            //   ),
-            // );
-            // if (updateCheck[0] == 'U') {
-            //   teamCodesCompleted.add(qrRes);
-            // }
+            String? qrRes = await scanner.scan();
+            // debugPrint("TeamCode: $qrRes");
+            String updateCheck = await updateDB(ref, qrRes as String)
+                .timeout(const Duration(seconds: 5), onTimeout: () {
+              return 'Timeout';
+            });
+            if (!mounted) return;
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                backgroundColor: Colors.blueGrey.withOpacity(0.2),
+                content: Text(updateCheck,
+                    style: const TextStyle(
+                      color: Colors.white,
+                    )),
+                margin: const EdgeInsets.all(10),
+                behavior: SnackBarBehavior.floating,
+                //padding: const EdgeInsets.all(8),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+            );
+            if (updateCheck[0] == 'U') {
+              teamCodesCompleted.add(qrRes);
+            }
+
+
+
           }, child: Obx(() {
             return Row(
               mainAxisSize: MainAxisSize.min,

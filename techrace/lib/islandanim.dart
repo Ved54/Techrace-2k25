@@ -240,7 +240,7 @@ class _DynamicIslandAnimatedState extends State<DynamicIslandAnimated>
 
 // class AnimatedIsland extends AnimatedWidget {
 //   const AnimatedIsland({super.key, width}) : super(listenable: width);
-
+//
 //   @override
 //   Widget build(BuildContext context) {
 //     return const DynamicIslandAnimated();

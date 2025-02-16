@@ -33,6 +33,8 @@ class _LeaderBoardState extends State<LeaderBoard> {
       .child(fbTeam) //team string
       .orderByChild('current_clue_no');
 
+
+
   // this should be a stream
 
   var rebuildLeaderBoard = ValueNotifier(false);
@@ -87,7 +89,7 @@ class _LeaderBoardState extends State<LeaderBoard> {
 
     databaseReference.get().then((DataSnapshot snapshot) {
       // leaderBoardData = snapshot.value as Map;
-      // debugPrint(snapshot.value.toString());
+      // print(snapshot.value.toString());
 
       leaderBoardData = snapshot.value as Map;
       // print("leaderBordData: $leaderBordData");

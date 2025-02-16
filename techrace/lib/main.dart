@@ -96,8 +96,8 @@ Future<void> setBaseUrl() async {
   final player1ref = await ref.once();
   MLocalStorage().setBaseUrl(player1ref.snapshot.value as String);
   Api.BASE_URL = player1ref.snapshot.value as String;
-  // MLocalStorage().setBaseUrl("https://techrace-2k25-backend-production.up.railway.app/");
-  // Api.BASE_URL =  "https://techrace-2k25-backend-production.up.railway.app/";
+  // MLocalStorage().setBaseUrl("server_link");
+  // Api.BASE_URL =  "server_link";
 }
 
 // Future<void> setBaseUrl() async {

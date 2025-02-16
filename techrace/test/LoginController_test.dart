@@ -27,7 +27,7 @@ void main() {
     // WidgetsFlutterBinding.ensureInitialized();
     // Api.BASE_URL = "https://1069-2405-201-3d-506c-e1a5-d713-b39a-899.in.ngrok.io";
 
-    Api.BASE_URL = "https://techrace-2k25-backend-production.up.railway.app/";
+    // Api.BASE_URL = "server link ";
     final LoginController loginController = LoginController();
     loginController.teamId.text = "345";
     loginController.password.text = "345";

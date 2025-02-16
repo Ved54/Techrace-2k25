@@ -24,7 +24,6 @@ class _WaitingScreenState extends State<WaitingScreen> {
   // final int _duration = 60 * 60;
   final int _duration = 10;
 
-  // final WaitingController waitingController = WaitingController();
   final WaitingController waitingController = Get.put(WaitingController());
 
   @override
@@ -174,7 +173,7 @@ class _WaitingScreenState extends State<WaitingScreen> {
           //       },
           //       child: Text("Theme.of(context)")),
           // )
-    
+
           // Align(
           //   alignment: Alignment.bottomCenter,
           //   child: Padding(
