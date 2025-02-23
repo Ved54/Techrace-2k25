@@ -71,7 +71,7 @@ class NetworkUtil {
       print("error in post ${e.toString()}");
       return HashMap.from({
         "status": "0",
-        "message": "Error occurred.\nPlease Log Out and Log In again.\nIf issue persists, call +91 897 580 3664"
+        "message": "Error occurred.\nPlease Log Out and Log In again.\nIf issue persists, call +91 9270735616"
       });
     }
   }

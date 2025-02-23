@@ -1,6 +1,4 @@
-import 'dart:io';
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -92,89 +90,47 @@ class ContactTile extends StatelessWidget {
       minVerticalPadding: 0,
       title: Row(
         children: [
-          Column(
+          // Expand the text content so the buttons get proper space
+          Expanded(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(name, style: TextStyle(fontSize: 14.sp)), // Responsive text
+                Text(designation,
+                    style: TextStyle(fontSize: 11.sp, color: Colors.blue)),
+              ],
+            ),
+          ),
+
+          // Buttons remain at the end without causing overflow
+          Row(
             mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(name),
-              Text(designation,
-                  style: const TextStyle(fontSize: 11, color: Colors.blue)),
+              IconButton(
+                constraints: const BoxConstraints(minHeight: 10, minWidth: 40),
+                padding: EdgeInsets.zero,
+                onPressed: () {
+                  launchUrl(Uri.parse('tel:$phone'));
+                },
+                icon: const Icon(Icons.phone),
+              ),
+              IconButton(
+                constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
+                padding: EdgeInsets.zero,
+                onPressed: () {
+                  List nameList = name.split(' ');
+                  launchUrl(
+                      Uri.parse(
+                          'https://api.whatsapp.com/send?phone=91$phone&text=Hi%20${nameList[0]}'),
+                      mode: LaunchMode.externalApplication);
+                },
+                icon: const FaIcon(FontAwesomeIcons.whatsapp),
+              ),
             ],
           ),
-          const Spacer(),
-          Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
-                    constraints: const BoxConstraints(minHeight: 10, minWidth: 40),
-                    padding: EdgeInsets.zero,
-                    onPressed: () {
-                      launchUrl(Uri.parse('tel:$phone'));
-                    },
-                    icon: const Icon(
-                      Icons.phone,
-                    )),
-                IconButton(
-                  constraints: const BoxConstraints(minHeight: 30, minWidth: 30),
-                  padding: EdgeInsets.zero,
-                  onPressed: () {
-                    // if(Platform.isIOS) {
-                    List nameList = name.split(' ');
-                    launchUrl(
-                        Uri.parse(
-                            'https://api.whatsapp.com/send?phone=91$phone&text=Hi%20${nameList[0]}'),
-                        mode: LaunchMode.externalApplication);
-                    // launchUrl(Uri.parse(
-                    //     'https://api.whatsapp.com/send?phone=91$phone&text=Hi%20Bushan'));
-                    // }
-                    // else {
-                    //   launchUrl(Uri.parse('https://wa.me/91$phone?text=Hi%20Bushan'));
-                    // }
-                  },
-                  icon: const FaIcon(FontAwesomeIcons.whatsapp),
-                ),
-              ]),
         ],
       ),
-      // subtitle: Row(children: [
-      //   IconButton(
-      //       onPressed: () {
-      //         launchUrl(Uri.parse('tel:8779683559'));
-      //       },
-      //       icon: const Icon(Icons.phone)),
-      //   IconButton(
-      //     onPressed: () {
-      //       launchUrl(Uri.parse(
-      //           'https://wa.me/9198779683559?text=Hi%20Bushan'));
-      //     },
-      //     icon: const FaIcon(FontAwesomeIcons.whatsapp),
-      //   ),
-      // ]),
-      // subtitle: Column(
-      //   // mainAxisAlignment: MainAxisAlignment.start,
-      //   crossAxisAlignment: CrossAxisAlignment.start,
-      //   children: [
-      //     const Text('Executive Head'),
-      //     Row(children: [
-      //       IconButton(
-      //           onPressed: () {},
-      //           icon: const Icon(Icons.phone)),
-      //       IconButton(
-      //         onPressed: () {},
-      //         icon: const FaIcon(FontAwesomeIcons.whatsapp),
-      //       ),
-      //     ]),
-      //   ],
-      // ),
     );
   }
 }
-
-// Widget contactDesign() {
-//   return Container(
-//       //custom list tile design
-
-//       );
-// }

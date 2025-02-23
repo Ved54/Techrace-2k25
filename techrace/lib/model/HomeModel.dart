@@ -308,6 +308,7 @@ class HomeModel {
     if(homeController.clueNo.value != 1) {
       homeController.prevClueSolvedTimeStamp.value = data.snapshot.child("prev_clue_solved_timestamp").value.toString();
     }
+    print("Calling Update Time");
     await TimeStream().updateTime();
     // homeController.animationController.value = 0;
 

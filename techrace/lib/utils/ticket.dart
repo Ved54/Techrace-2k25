@@ -152,9 +152,9 @@ class Ticket3 extends StatelessWidget {
                                 },
                               ))),
                 ),
-                Spacer(),
+                const SizedBox(width: 5,),
                 Padding(
-                  padding: const EdgeInsets.all(32.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Container(
                       padding: EdgeInsets.all(8),
                       decoration: BoxDecoration(

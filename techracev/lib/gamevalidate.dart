@@ -382,7 +382,6 @@ class _ValidateState extends State<Validate>
                             teamCodesCompleted.add(teamId);
                           }
                         }
-
                         
                       }
                     },

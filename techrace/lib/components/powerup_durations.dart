@@ -33,6 +33,7 @@ class _PowerUpDurationsState extends State<PowerUpDurations> {
   late int timeLeft2hint2LockDuration;
 
   static int getTimeDiffInSeconds(bigger, int biggerBias, smaller) {
+    print("This is bigger " + bigger);
     var timeUntilrev = DateTime.parse(bigger);
     timeUntilrev = timeUntilrev.add(Duration(seconds: biggerBias));
 
@@ -41,9 +42,6 @@ class _PowerUpDurationsState extends State<PowerUpDurations> {
     // return timeUntilrev.difference(now).inSeconds;
     return timeUntilrev.difference(now).inSeconds;
   }
-
-
-
 
   // // change times here //old
   // static final int freezeDuration = (7.5 * 60).toInt();

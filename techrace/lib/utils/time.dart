@@ -80,6 +80,7 @@ class TimeStream {
   Future<void> updateTime() async {
     HomeController homeController = Get.find<HomeController>();
     ref = FirebaseDatabase.instance.ref("$fbTeam/$teamId"); //team string
+    print("This is Local Storage time" + MLocalStorage().getStartDateTime());
     //print('homeController.clueNo.value: ${homeController.clueNo.value}');
     if (homeController.clueNo.value == 1) {
       time = DateTime.parse(MLocalStorage().getStartDateTime());
